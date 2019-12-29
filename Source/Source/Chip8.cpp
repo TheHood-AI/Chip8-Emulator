@@ -98,7 +98,7 @@ void Chip8::LoadGame(const std::string& aFilePath)
 
 	std::filebuf* buf = file.rdbuf();
 
-	std::size_t size = buf->pubseekoff(0, file.end, file.in);
+	std::size_t size = static_cast<size_t>(buf->pubseekoff(0, file.end, file.in));
 	buf->pubseekpos(0, file.in);
 
 	char* buffer = new char[size];
