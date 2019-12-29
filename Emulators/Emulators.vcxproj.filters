@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{263b3128-e251-4e34-92bd-7c60b6043f1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fullscreentextures">
+      <UniqueIdentifier>{da8456db-3d8e-4491-8102-c92d18e68418}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{1a9ef07a-1f30-4c8c-8ff3-80a393809ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{96bfe38b-6cd1-4147-8f23-6f407a6ea37d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\CopyShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\PixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\VertexShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\ShaderStructs.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Chip8.h" />
+    <ClInclude Include="Include\Renderer.h" />
+    <ClInclude Include="Include\FullScreenTexture.h">
+      <Filter>Fullscreentextures</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\FullScreenTextureFactory.h">
+      <Filter>Fullscreentextures</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DirectXFramework.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\GraphicsEngine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\WindowHandler.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\InputHandler.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RandomNrGen.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Timer.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Chip8.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Renderer.cpp" />
+    <ClCompile Include="Source\FullScreenTexture.cpp">
+      <Filter>Fullscreentextures</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FullScreenTextureFactory.cpp">
+      <Filter>Fullscreentextures</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DirectXFramework.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GraphicsEngine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\WindowHandler.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InputHandler.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RandomNrGen.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
