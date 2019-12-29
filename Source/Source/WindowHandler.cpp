@@ -1,5 +1,6 @@
 #include "WindowHandler.h"
 #include "InputHandler.hpp"
+#include <cassert>
 
 bool CWindowHandler::Init(const SWindowData& someWindowData)
 {
@@ -11,9 +12,17 @@ bool CWindowHandler::Init(const SWindowData& someWindowData)
 	windowClass.lpszClassName = L"Engine";
 	RegisterClass(&windowClass);
 
-	myWindowHandle = CreateWindow(L"Engine", L"Game", WS_OVERLAPPEDWINDOW | WS_POPUP | WS_VISIBLE,
-		myWindowData.myX, myWindowData.myY, myWindowData.myWidth, myWindowData.myHeight,
-		nullptr, nullptr, nullptr, this);
+	if (someWindowData.myHandle == nullptr)
+	{
+		myWindowHandle = CreateWindow(L"Engine", L"Game", WS_OVERLAPPEDWINDOW | WS_POPUP | WS_VISIBLE,
+			myWindowData.myX, myWindowData.myY, myWindowData.myWidth, myWindowData.myHeight,
+			nullptr, nullptr, nullptr, this);
+	}
+	else
+	{
+		myWindowHandle = someWindowData.myHandle;
+
+	}
 
 	CommonUtilities::InputHandler::GetInstance().AttachWindow(myWindowHandle);
 

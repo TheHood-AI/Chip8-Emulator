@@ -57,6 +57,7 @@
     <ClInclude Include="Include\Timer.hpp">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Game.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Chip8.cpp" />
@@ -86,5 +87,6 @@
     <ClCompile Include="Source\Timer.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game.cpp" />
   </ItemGroup>
 </Project>

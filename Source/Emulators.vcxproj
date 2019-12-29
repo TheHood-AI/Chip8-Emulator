@@ -40,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -131,6 +131,9 @@
       <ObjectFileOutput>$(OutDir)Shaders\%(Filename).cso</ObjectFileOutput>
       <ShaderModel>5.0</ShaderModel>
     </FxCompile>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -179,6 +182,9 @@
       <ObjectFileOutput>$(OutDir)Shaders\%(Filename).cso</ObjectFileOutput>
       <ShaderModel>5.0</ShaderModel>
     </FxCompile>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <FxCompile Include="Shaders\CopyShader.hlsl">
@@ -214,6 +220,7 @@
     <ClInclude Include="Include\DirectXFramework.h" />
     <ClInclude Include="Include\FullScreenTexture.h" />
     <ClInclude Include="Include\FullScreenTextureFactory.h" />
+    <ClInclude Include="Include\Game.h" />
     <ClInclude Include="Include\GraphicsEngine.h" />
     <ClInclude Include="Include\InputHandler.hpp" />
     <ClInclude Include="Include\RandomNrGen.hpp" />
@@ -226,6 +233,7 @@
     <ClCompile Include="Source\DirectXFramework.cpp" />
     <ClCompile Include="Source\FullScreenTexture.cpp" />
     <ClCompile Include="Source\FullScreenTextureFactory.cpp" />
+    <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\GraphicsEngine.cpp" />
     <ClCompile Include="Source\InputHandler.cpp" />
     <ClCompile Include="Source\main.cpp" />

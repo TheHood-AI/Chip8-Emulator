@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using Chip8Bridge;
 
 namespace Chip8Interface
 {
@@ -9,6 +10,7 @@ namespace Chip8Interface
     {
         public IntPtr myPanelHandle;
         public Thread myThread;
+        public CBridge myBridge;
 
         public MainWindow()
         {
@@ -20,7 +22,8 @@ namespace Chip8Interface
 
         public void Init()
         {
-
+            myBridge = new CBridge();
+            myBridge.Init(myPanelHandle);
         }
 
         private void WindowsFormsHost_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)

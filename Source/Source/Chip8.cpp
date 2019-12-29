@@ -4,6 +4,8 @@
 #include "RandomNrGen.hpp"
 #include "InputHandler.hpp"
 
+#include <cassert>
+
 unsigned char Chip8::myGfx[64 * 32];
 
 unsigned char globalChip8FontSet[80] =
@@ -119,6 +121,7 @@ void Chip8::KeyboardDown()
 	auto& handler = InputHandler::GetInstance();
 	if (handler.KeyWasPressed(Key::One))
 	{
+		assert(false);
 		myKey[0x1] = 1;
 	}
 	if (handler.KeyWasPressed(Key::Two)) myKey[0x2] = 1;

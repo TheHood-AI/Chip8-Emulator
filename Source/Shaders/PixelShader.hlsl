@@ -9,7 +9,7 @@ PixelOutput main(VertexToPixel input, float4 pixelPosition : SV_Position)
 	int index = y * 64 + x;
 	//j * 4 + i
 	if (pixelData[index].r == 1) {
-		returnValue.myColor.rgb = float3(1, 1, 1);
+		returnValue.myColor.rgb = float3(0, 1, 1);
 	}
 	returnValue.myColor.a = 1.0f;
 	return returnValue;

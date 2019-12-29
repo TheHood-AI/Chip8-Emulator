@@ -7,6 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chip8", "Source\Emulators.v
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chip8Interface", "Chip8Interface\Chip8Interface.csproj", "{8898F948-C120-43F6-90C6-34CAD3B8C4A0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chip8Bridge", "Chip8Bridge\Chip8Bridge.vcxproj", "{566F9E69-A777-4D83-8208-1D0DDE8EF916}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C72856F7-07CE-499A-9E62-47E641B7C0C4} = {C72856F7-07CE-499A-9E62-47E641B7C0C4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,8 +34,8 @@ Global
 		{C72856F7-07CE-499A-9E62-47E641B7C0C4}.Release|x86.Build.0 = Release|Win32
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|x64.Build.0 = Debug|Any CPU
+		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|x64.ActiveCfg = Debug|x64
+		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|x64.Build.0 = Debug|x64
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Debug|x86.Build.0 = Debug|Any CPU
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +44,16 @@ Global
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Release|x64.Build.0 = Release|Any CPU
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Release|x86.ActiveCfg = Release|Any CPU
 		{8898F948-C120-43F6-90C6-34CAD3B8C4A0}.Release|x86.Build.0 = Release|Any CPU
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Debug|x64.ActiveCfg = Debug|x64
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Debug|x64.Build.0 = Debug|x64
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Debug|x86.ActiveCfg = Debug|Win32
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Debug|x86.Build.0 = Debug|Win32
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Release|Any CPU.ActiveCfg = Release|Win32
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Release|x64.ActiveCfg = Release|x64
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Release|x64.Build.0 = Release|x64
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Release|x86.ActiveCfg = Release|Win32
+		{566F9E69-A777-4D83-8208-1D0DDE8EF916}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

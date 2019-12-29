@@ -20,16 +20,25 @@ CRenderer::CRenderer()
 bool CRenderer::Init(CDirectXFramework* aFramework)
 {
 	if (!aFramework)
+	{
+		assert(false && "aFramework == nullptr");
 		return false;
+	}
 
 	myContext = aFramework->GetContext();
 
 	if (!myContext)
+	{
+		assert(false && "myContext == nullptr");
 		return false;
+	}
 
 	ID3D11Device* device = aFramework->GetDevice();
 	if (!device)
+	{
+		assert(false && "failed to create device");
 		return false;
+	}
 
 	D3D11_BUFFER_DESC bufferDesc = { 0 };
 	bufferDesc.Usage = D3D11_USAGE_DYNAMIC;
@@ -39,16 +48,21 @@ bool CRenderer::Init(CDirectXFramework* aFramework)
 	bufferDesc.ByteWidth = sizeof(SFrameBuffer);
 	HRESULT result = device->CreateBuffer(&bufferDesc, nullptr, &myFrameBuffer);
 	if (FAILED(result))
+	{
+		assert(false && "Failed to create buffer");
 		return false;
+	}
 
 	std::ifstream vsFile;
-	vsFile.open("../Workbed/Shaders/VertexShader.cso", std::ios::binary);
+	vsFile.open("Shaders/VertexShader.cso", std::ios::binary);
 	std::string vsData = { std::istreambuf_iterator<char>(vsFile), std::istreambuf_iterator<char>() };
 	ID3D11VertexShader* vertexShader;
 	result = device->CreateVertexShader(vsData.data(), vsData.size(), nullptr, &vertexShader);
 
 	if (FAILED(result))
 	{
+		assert(false && "Failed to create Vertex Shader");
+
 		return false;
 	}
 	vsFile.close();
@@ -60,6 +74,8 @@ bool CRenderer::Init(CDirectXFramework* aFramework)
 	result = device->CreatePixelShader(psData.data(), psData.size(), nullptr, &pixelShader);
 	if (FAILED(result))
 	{
+		assert(false && "Failed to create Pixel Shader");
+
 		return false;
 	}
 	psFile.close();
@@ -70,7 +86,8 @@ bool CRenderer::Init(CDirectXFramework* aFramework)
 	ID3D11Texture2D* backbufferTexture = aFramework->GetBackBuffer();
 	if (!backbufferTexture)
 	{
-		assert(false);
+		assert(false && "Failed to create BackBuffer");
+
 		return false;
 	}
 

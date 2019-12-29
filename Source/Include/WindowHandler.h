@@ -9,6 +9,7 @@ public:
 		unsigned int myY;
 		unsigned int myWidth;
 		unsigned int myHeight;
+		HWND myHandle = nullptr;
 	};
 
 	CWindowHandler() = default;
