@@ -12,6 +12,8 @@ namespace Chip8Bridge
 		~CBridge();
 		void Init(System::IntPtr aHWND);
 		void Shutdown();
+		void GetInput(char aKey, bool aIsPressed);
+		void LoadRom(System::String^ aFilePath);
 	private:
 		Game* myGame;
 	};

@@ -6,10 +6,11 @@
         xmlns:WinForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:local="clr-namespace:Chip8Interface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Closed="WindowClosed">
     <Grid>
-        <WindowsFormsHost x:Name="myFormsHost" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" ChildChanged="WindowsFormsHost_ChildChanged">
-            <WinForms:Panel x:Name="myEngineRenderPanel" Width="722" Height="399"/>
+        <WindowsFormsHost x:Name="myFormsHost" HorizontalAlignment="Left" Margin="10,42,0,0" Width="772" ChildChanged="WindowsFormsHost_ChildChanged" Focusable="True" KeyDown="KeyboardPressed" KeyUp="KeyboardReleased" Height="367" VerticalAlignment="Top">
+            <WinForms:Panel x:Name="myEngineRenderPanel" Width="722" Height="399" Enabled="True"/>
         </WindowsFormsHost>
+        <Button Content="Load" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

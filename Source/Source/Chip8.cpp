@@ -3,6 +3,7 @@
 #include <fstream>
 #include "RandomNrGen.hpp"
 #include "InputHandler.hpp"
+#include "Game.h"
 
 #include <cassert>
 
@@ -84,7 +85,7 @@ void Chip8::EmulateCycle(float aDelta)
 	}
 
 	KeyboardDown();
-	KeyboardUp();
+	//KeyboardUp();
 	myHertzTimer -= aDelta;
 }
 
@@ -95,6 +96,7 @@ void Chip8::LoadGame(const std::string& aFilePath)
 	if (!file.is_open())
 	{
 		std::cout << "Failed to find file" << std::endl;
+		assert(false && "Could not find file");
 		return;
 	}
 
@@ -116,10 +118,11 @@ void Chip8::LoadGame(const std::string& aFilePath)
 
 void Chip8::KeyboardDown()
 {
-	using namespace CommonUtilities;
-	using Key = InputHandler::Key;
-	auto& handler = InputHandler::GetInstance();
-	if (handler.KeyWasPressed(Key::One))
+	//using namespace CommonUtilities;
+	//using Key = InputHandler::Key;
+	//auto& handler = InputHandler::GetInstance();
+
+	/*if (handler.KeyWasPressed(Key::One))
 	{
 		assert(false);
 		myKey[0x1] = 1;
@@ -144,7 +147,27 @@ void Chip8::KeyboardDown()
 	if (handler.KeyWasPressed(Key::Z)) myKey[0xA] = 1;
 	if (handler.KeyWasPressed(Key::X)) myKey[0x0] = 1;
 	if (handler.KeyWasPressed(Key::C)) myKey[0xB] = 1;
-	if (handler.KeyWasPressed(Key::V)) myKey[0xF] = 1;
+	if (handler.KeyWasPressed(Key::V)) myKey[0xF] = 1;*/
+
+	myKey[0x1] = Game::myKeys.one;
+	myKey[0x2] = Game::myKeys.two;
+	myKey[0x3] = Game::myKeys.three;
+	myKey[0xC] = Game::myKeys.four;
+
+	myKey[0x4] = Game::myKeys.Q;
+	myKey[0x5] = Game::myKeys.W;
+	myKey[0x6] = Game::myKeys.E;
+	myKey[0xD] = Game::myKeys.R;
+
+	myKey[0x7] = Game::myKeys.A;
+	myKey[0x8] = Game::myKeys.S;
+	myKey[0x9] = Game::myKeys.D;
+	myKey[0xE] = Game::myKeys.F;
+
+	myKey[0xA] = Game::myKeys.Z;
+	myKey[0x0] = Game::myKeys.X;
+	myKey[0xB] = Game::myKeys.C;
+	myKey[0xF] = Game::myKeys.V;
 }
 
 void Chip8::KeyboardUp()

@@ -1,4 +1,5 @@
 #include "InputHandler.hpp"
+#include <cassert>
 
 namespace CommonUtilities
 {
@@ -129,6 +130,7 @@ namespace CommonUtilities
 
 	bool InputHandler::UpdateEvents(UINT aMessage, WPARAM aWParam, LPARAM aLParam)
 	{
+		assert(false);
 		switch (aMessage)
 		{
 			case WM_LBUTTONDOWN:

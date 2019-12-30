@@ -16,4 +16,6 @@ Class Chip8Bridge.CBridge: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Methods:
     Init(IntPtr): PrivateScope, Public, HideBySig
     Shutdown(): PrivateScope, Public, HideBySig
+    GetInput(SByte IsSignUnspecifiedByte, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    LoadRom(String): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
