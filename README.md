@@ -1,5 +1,7 @@
 # Chip8-Emulator
-A Chip-8 emulator
+A Chip-8 emulator built on Directx 11.
+There is still a few things that I want to do with this project, like add sound. But I felt that it was 
+in a good enough shape to put up here and share with people that maight be interested
 
 
 # How to start
